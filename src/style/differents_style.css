@@ -1,0 +1,42 @@
+:root {
+  /* Couleurs principales (Bleu Nuit & Émeraude) */
+  --color-primary: #0a192f; /* Bleu Nuit très foncé (pour le fond principal) */
+  --color-secondary: #172a45; /* Bleu foncé subtil (pour les cartes/fonds secondaires) */
+  --color-accent: #64ffda; /* Vert Émeraude / Turquoise très vif (pour l'accentuation) */
+  --color-text: #ccd6f6; /* Texte gris-bleu clair (léger contraste) */
+  --color-text-light: #8892b0; /* Texte secondaire/détails (gris-bleu) */
+
+  /* Arrière-plans des sections/cartes */
+  --color-background-main: var(--color-primary);
+  --color-background-card: var(--color-secondary);
+  --color-border: #2c4263; /* Bordures bleu marine/gris */
+
+  /* Police */
+  --font-family-main: 'Poppins', sans-serif;
+  /* Optionnel : vous pourriez essayer 'Roboto Mono' ou 'Fira Code' pour un look tech plus prononcé */
+
+  /* Ombre de survol (le "contour distingué" en Émeraude) */
+  --shadow-hover: 0 0 10px rgba(100, 255, 218, 0.8), 0 0 20px rgba(100, 255, 218, 0.4);
+}
+:root {
+  /* ------------------------------------ */
+  /* COULEURS (Noir Profond & Violet Néon) */
+  /* ------------------------------------ */
+  --color-primary: #0d0d0d; /* Noir très profond (Fond principal) */
+  --color-secondary: #1f0b27; /* Violet très foncé subtil (Fonds secondaires, Cartes) */
+  --color-accent: #ee22ff; /* Violet/Magenta Néon très vif (Accentuation) */
+  --color-text: #f0f0f0; /* Texte Blanc pur (Contraste maximal) */
+  --color-text-light: #b57edc; /* Texte secondaire Violet clair */
+
+  /* Arrière-plans des sections/cartes */
+  --color-background-main: var(--color-primary);
+  --color-background-card: var(--color-secondary);
+  --color-border: #331545; /* Bordures subtiles violet foncé */
+  --color-button-text-dark: var(--color-primary);
+
+  /* Police */
+  --font-family-main: 'Poppins', sans-serif;
+
+  /* Ombre de survol (le "contour distingué" en Néon) */
+  --shadow-hover: 0 0 10px rgba(238, 34, 255, 0.8), 0 0 20px rgba(238, 34, 255, 0.4);
+}
