@@ -13,7 +13,6 @@
           <span class="detail-value">{{ projet.nombreMembres }}</span>
         </div>
         <div class="detail-item">
-          <span class="detail-label">Durée: </span>
           <span class="detail-value">{{ projet.duree }}</span>
         </div>
         <div class="detail-item">

@@ -1,63 +1,38 @@
 <template>
   <div class="projets-view">
-    <h1>Mes Projets</h1>
     <div class="projets-header">
       <div class="search-bar">
-        <svg
-          class="search-icon"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
           <circle cx="11" cy="11" r="8"></circle>
           <path d="m21 21-4.35-4.35"></path>
         </svg>
-        <input
-          type="text"
-          placeholder="Rechercher un projet..."
-          class="search-input"
-          v-model="search"
-          ref="searchInput"
-        />
+        <input type="text" placeholder="Rechercher un projet..." class="search-input" v-model="search"
+          ref="searchInput" />
       </div>
       <div class="filters-group">
         <FilterSelect v-model="selectedFilter" :options="filters" class="w-48" />
 
         <!-- Boutons année -->
         <div v-if="filtreActif === 'annee'" class="buttons-wrapper">
-          <button
-            v-for="a in anneesDisponibles"
-            :key="a"
-            :class="['filter-btn', { active: filtreValeur === a }]"
-            @click="filtreValeur = a"
-          >
+          <button v-for="a in anneesDisponibles" :key="a" :class="['filter-btn', { active: filtreValeur === a }]"
+            @click="filtreValeur = a">
             BUT {{ a }}
           </button>
         </div>
 
         <!-- Boutons membres -->
         <div v-if="filtreActif === 'membres'" class="buttons-wrapper">
-          <button
-            v-for="m in membresDisponibles"
-            :key="m"
-            :class="['filter-btn', { active: filtreValeur === m }]"
-            @click="filtreValeur = m"
-          >
+          <button v-for="m in membresDisponibles" :key="m" :class="['filter-btn', { active: filtreValeur === m }]"
+            @click="filtreValeur = m">
             {{ m }}
           </button>
         </div>
 
         <!-- Boutons Langages -->
         <div v-if="filtreActif === 'langage'" class="buttons-wrapper">
-          <button
-            v-for="m in langageDisponibles"
-            :key="m"
-            :class="['filter-btn', { active: filtreValeur === m }]"
-            @click="filtreValeur = m"
-          >
+          <button v-for="m in langageDisponibles" :key="m" :class="['filter-btn', { active: filtreValeur === m }]"
+            @click="filtreValeur = m">
             {{ m }}
           </button>
         </div>

@@ -13,7 +13,19 @@ const router = createRouter({
       path: '/projets',
       component: ProjetsView,
     },
+    {
+      path: '/:pathMatch(.*)*', // 404 ->
+      redirect: '/',
+    },
   ],
+  scrollBehavior(_to, _from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    }
+
+    // sinon scroll en haut
+    return { top: 0 }
+  },
 })
 
 export default router
