@@ -20,9 +20,11 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/cv" class="nav-link" active-class="active">
+                    <!-- https://llwdgicuwgwhsiymirjw.supabase.co/storage/v1/object/public/cv/Turbe_Keylian_CV_Anglais.pdf -->
+                    <a href="https://llwdgicuwgwhsiymirjw.supabase.co/storage/v1/object/public/cv/Turbe_Keylian_CV.pdf"
+                        download class="nav-link">
                         CV
-                    </router-link>
+                    </a>
                 </li>
                 <li>
                     <router-link to="/contact" class="nav-link" active-class="active">
