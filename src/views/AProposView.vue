@@ -1,5 +1,25 @@
 <template>
     <div class="about-view">
+        <!-- Présentation Personnelle -->
+        <section class="section">
+            <h2>À Propos de Moi</h2>
+            <p>
+                Je suis <span class="colored">Turbé Keylian</span>, j'ai 20 ans et je suis en troisième année de
+                <span class="colored">BUT Informatique</span> parcours développement Web & Application. Interessé par le
+                développement, mon parcours m'a permis de réaliser divers projets techniques allant du développement
+                d'API en <span class="colored">Node.js</span> à la création d'applications mobiles avec
+                <span class="colored">Flutter</span>, en passant par la gestion de bases de données.
+            </p>
+            <p>
+                Mon approche est de toujours apprendre de nouvelles choses, d'optimiser mes compétences et
+                de comprendre les principes fondamentaux de chaque technologie que j'explore.
+            </p>
+            <p>
+                Je suis quelqu'un de patient, généreux, avec un bon esprit d'équipe et une bonne gestion
+                de mon emploi du temps.
+            </p>
+        </section>
+
         <!-- Compétences Techniques -->
         <section class="section">
             <h2>Compétences Techniques</h2>
@@ -9,18 +29,27 @@
                 <div class="skills-subcategory">
                     <h4>Back-end</h4>
                     <p>Je maîtrise la création et la gestion de serveurs, d'API et de bases de données,
-                        nottament avec du PHP, Node.js et PostgreSQL.</p>
+                        nottament avec du PHP, Node.js, PostgreSQL et Dart.</p>
                     <ul class="tech-list">
-                        <li class="icon" title="PHP">
+                        <li class="icon" title="PHP" @click="$router.push({
+                            name: 'projets',
+                            query: { filter: 'langage', value: 'PHP' }
+                        })">
                             <DePhpOriginal />
                         </li>
                         <li class="icon" title="JavaScript">
                             <DeJavascriptOriginal />
                         </li>
-                        <li class="icon" title="PostgreSQL">
+                        <li class="icon" title="PostgreSQL" @click="$router.push({
+                            name: 'projets',
+                            query: { filter: 'langage', value: 'SQL' }
+                        })">
                             <AnOutlinedConsoleSql />
                         </li>
-                        <li class="icon" title="Node.js">
+                        <li class="icon" title="Node.js" @click="$router.push({
+                            name: 'projets',
+                            query: { filter: 'langage', value: 'Node.JS' }
+                        })">
                             <DeNodejsPlainWordmark />
                         </li>
                     </ul>
@@ -49,10 +78,16 @@
                     <h4>Applications</h4>
                     <p>Développement d'applications et scripts variés avec Java, Python, F#, C et C++.</p>
                     <ul class="tech-list">
-                        <li class="icon" title="Java">
+                        <li class="icon" title="Java" @click="$router.push({
+                            name: 'projets',
+                            query: { filter: 'langage', value: 'Java' }
+                        })">
                             <DeJavaOriginalWordmark />
                         </li>
-                        <li class="icon" title="Python">
+                        <li class="icon" title="Python" @click="$router.push({
+                            name: 'projets',
+                            query: { filter: 'langage', value: 'Python' }
+                        })">
                             <DePythonOriginalWordmark />
                         </li>
                         <li class="icon" title="F#">
@@ -61,7 +96,10 @@
                         <li class="icon" title="C">
                             <DeCOriginal />
                         </li>
-                        <li class="icon" title="C++">
+                        <li class="icon" title="C++" @click="$router.push({
+                            name: 'projets',
+                            query: { filter: 'langage', value: 'C++' }
+                        })">
                             <DeCplusplusOriginal />
                         </li>
                     </ul>
@@ -99,7 +137,7 @@
                 <div class="skills-subcategory">
                     <h4>Frameworks</h4>
                     <p>Utilisation de frameworks et bibliothèques pour accélérer le développement front et back-end.
-                        Symfony, JavaFX, Vue.js et Express.js.
+                        Symfony, JavaFX, Vue.js, Express.js et Flutter.
                     </p>
                     <ul class="tech-list">
                         <li class="icon" title="Symfony">
@@ -108,7 +146,10 @@
                         <li class="icon" title="JavaFX">
                             <DeJavaOriginalWordmark />
                         </li>
-                        <li class="icon" title="Vue.js">
+                        <li class="icon" title="Vue.js" @click="$router.push({
+                            name: 'projets',
+                            query: { filter: 'langage', value: 'PHP' }
+                        })">
                             <DeVuejsOriginalWordmark />
                         </li>
                         <li class="icon" title="Express.js">

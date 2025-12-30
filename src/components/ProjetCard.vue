@@ -22,7 +22,9 @@
         </div>
         <div class="detail-item">
           <span class="detail-label">Langage: </span>
-          <span class="detail-value">{{ projet.langage }}</span>
+          <span v-for="(langage, index) in projet.langages" :key="langage">
+            {{ langage }}<span v-if="index < projet.langages.length - 1">, </span>
+          </span>
         </div>
       </div>
 

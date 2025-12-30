@@ -71,6 +71,9 @@ import logoAPIP from '@/assets/logo_APIP.png'
 import logoJEI from '@/assets/logo_JEI.png'
 import logoTTT from '@/assets/logo_TTT.png'
 import logoERP from '@/assets/logo_ERP.png'
+import logoPF from '@/assets/logo_PF.png'
+import logoWB from '@/assets/logo_WB.png'
+import logoAPIB from '@/assets/logo_APIB.png'
 
 export default {
   name: 'ProjetsView',
@@ -89,7 +92,7 @@ export default {
           nombreMembres: 6,
           duree: '3 mois',
           annee: 3,
-          langage: 'Python',
+          langages: ['Python'],
           image: logoBF,
           scolaire: true,
         },
@@ -101,10 +104,9 @@ export default {
           nombreMembres: 1,
           duree: '1 mois',
           annee: 2,
-          langage: 'Java',
+          langages: ['Java'],
           image: logoNB,
           scolaire: true,
-
         },
         {
           nom: 'Jeu de la Vie',
@@ -113,10 +115,9 @@ export default {
           nombreMembres: 1,
           duree: '1 mois',
           annee: 2,
-          langage: 'C++',
+          langages: ['C++'],
           image: logoJDLV,
           scolaire: true,
-
         },
         {
           nom: 'Académia',
@@ -126,7 +127,7 @@ export default {
           nombreMembres: 1,
           duree: '3 mois',
           annee: 2,
-          langage: 'PHP',
+          langages: ['PHP', 'SQL'],
           image: logoAC,
           scolaire: true,
         },
@@ -138,7 +139,7 @@ export default {
           nombreMembres: 1,
           duree: '1 mois',
           annee: 2,
-          langage: 'Node.JS',
+          langages: ['Node.JS', 'SQL'],
           image: logoAPIP,
           scolaire: true,
         },
@@ -150,7 +151,7 @@ export default {
           nombreMembres: 1,
           duree: '1 mois',
           annee: 2,
-          langage: 'Vue.JS',
+          langages: ['Vue.JS'],
           image: logoFP,
           scolaire: true,
         },
@@ -162,7 +163,7 @@ export default {
           nombreMembres: 3,
           duree: '1 mois',
           annee: 2,
-          langage: 'Flutter',
+          langages: ['Flutter', 'Dart'],
           image: logoJEI,
           scolaire: true,
         },
@@ -174,7 +175,7 @@ export default {
           nombreMembres: 3,
           duree: '1 mois',
           annee: 2,
-          langage: 'C++',
+          langages: ['C++'],
           image: logoTTT,
           scolaire: true,
         },
@@ -186,7 +187,7 @@ export default {
           nombreMembres: 1,
           duree: '1 mois',
           annee: 2,
-          langage: 'Flutter',
+          langages: ['Flutter', 'Dart'],
           image: logoERP,
           scolaire: true,
         },
@@ -198,9 +199,46 @@ export default {
           nombreMembres: 4,
           duree: '1 mois',
           annee: 1,
-          langage: 'Python',
+          langages: ['Python'],
           image: logoNM,
           scolaire: true,
+        },
+        {
+          nom: 'Portfolio',
+          description:
+            "Le but de ce projet était de créer un portfolio pour présenter mes compétences et mes projets",
+          github: 'https://gitlab.com/keylian15/portfolio',
+          nombreMembres: 1,
+          duree: '1 ans',
+          annee: 3,
+          langages: ['Vue.JS'],
+          image: logoPF,
+          scolaire: true,
+        },
+        {
+          nom: 'Basket Predictor',
+          description:
+            "Le but de cette application web est de prédire le score d'un match de basket. (Le Front du projet)",
+          github: 'https://gitlab.com/keylian15/WEB_Basket',
+          nombreMembres: 5,
+          duree: '1 mois',
+          annee: 2,
+          langages: ['PHP', 'SQL'],
+          image: logoWB,
+          scolaire: true,
+        },
+        {
+          nom: 'Basket Predictor (API)',
+          description:
+            "Le but de cette application web est de prédire le score d'un match de basket. (Le Back du projet)",
+          github: 'https://gitlab.com/keylian15/API_Basket',
+          nombreMembres: 1,
+          duree: '1 mois',
+          annee: 2,
+          langages: ['Node.JS'],
+          image: logoAPIB,
+          scolaire: true,
+
         },
       ],
       search: '',
@@ -246,9 +284,11 @@ export default {
 
         case 'langage':
           if (this.filtreValeur !== null) {
-            result = result.filter((p) => p.langage === this.filtreValeur)
+            result = result.filter(p =>
+              p.langages.includes(this.filtreValeur)
+            )
           }
-          result.sort((a, b) => a.langage.localeCompare(b.langage))
+          result.sort((a, b) => a.nom.localeCompare(b.nom))
           break
 
         case 'nonScolaire':
@@ -283,16 +323,29 @@ export default {
     },
 
     langageDisponibles() {
-      const set = new Set(this.projets.map((p) => p.langage))
-      return [...set].sort((a, b) => a - b)
+      const set = new Set()
+      this.projets.forEach(p => {
+        p.langages.forEach(lang => set.add(lang))
+      })
+      return [...set].sort((a, b) => a.localeCompare(b))
     },
   },
+
   watch: {
     selectedFilter(newValue) {
       this.filtreActif = newValue.value
     },
 
     filtreActif(newValue) {
+      // Réinitialiser les filtres lors du changement
+      if (newValue !== 'langage') {
+        this.langagesSelectionnes = []
+      }
+
+      if (this.$route.query.value || this.$route.query.langages) {
+        return
+      }
+
       if (newValue === 'annee') {
         this.filtreValeur = this.anneeMin
       } else if (newValue === 'membres') {
@@ -301,9 +354,43 @@ export default {
         this.filtreValeur = null
       }
     },
+
+    // Synchroniser l'URL avec les langages sélectionnés
+    langagesSelectionnes(newValue) {
+      if (this.filtreActif === 'langage' && newValue.length > 0) {
+        this.$router.replace({
+          query: {
+            ...this.$route.query,
+            filter: 'langage',
+            langages: newValue.join(',')
+          }
+        })
+      } else if (this.filtreActif === 'langage' && newValue.length === 0) {
+        const query = { ...this.$route.query }
+        delete query.langages
+        this.$router.replace({ query })
+      }
+    }
   },
 
   mounted() {
+    const { filter, value, langages } = this.$route.query
+
+    if (filter) {
+      const option = this.filters.find(f => f.value === filter)
+      if (option) {
+        this.selectedFilter = option
+        this.filtreActif = filter
+
+        // Gérer le cas des langages multiples
+        if (filter === 'langage' && langages) {
+          this.langagesSelectionnes = langages.split(',')
+        } else {
+          this.filtreValeur = value ?? null
+        }
+      }
+    }
+
     window.addEventListener('keydown', this.handleShortcut)
   },
 

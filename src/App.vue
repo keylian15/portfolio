@@ -54,8 +54,10 @@ body {
   margin-top: 2rem;
 }
 
+.colored {
+  color: var(--color-accent);
+}
 
-.home,
 .projets-view,
 .about-view {
   font-family: var(--font-family-main);
