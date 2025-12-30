@@ -43,7 +43,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import '../style/App.css'
 const contentSection = ref(null)
 const scrollToSection = () => {
   contentSection.value.scrollIntoView({ behavior: 'smooth' })
