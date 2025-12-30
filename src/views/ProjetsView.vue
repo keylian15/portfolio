@@ -36,11 +36,23 @@
             {{ m }}
           </button>
         </div>
+
+        <!-- Boutons Non Scolaire -->
+        <div v-if="filtreActif === 'nonScolaire'" class="buttons-wrapper">
+          <button v-for="m in nonScolaireDisponibles" :key="m" :class="['filter-btn', { active: filtreValeur === m }]"
+            @click="filtreValeur = m">
+            {{ m }}
+          </button>
+        </div>
+
       </div>
     </div>
 
     <div class="projets-grid">
-      <ProjetCard v-for="projet in projetsFiltres" :key="projet.id" :projet="projet" />
+      <template v-if="projetsFiltres.length > 0">
+        <ProjetCard v-for="projet in projetsFiltres" :key="projet.id" :projet="projet" />
+      </template>
+      <p v-else class="no-projects">Aucun projet trouvé.</p>
     </div>
   </div>
 </template>
@@ -81,6 +93,7 @@ export default {
           annee: 3,
           langage: 'Python',
           image: logoBF,
+          scolaire: true,
         },
         {
           nom: 'NodeBuster',
@@ -92,6 +105,8 @@ export default {
           annee: 2,
           langage: 'Java',
           image: logoNB,
+          scolaire: true,
+
         },
         {
           nom: 'Jeu de la Vie',
@@ -102,6 +117,8 @@ export default {
           annee: 2,
           langage: 'C++',
           image: logoJDLV,
+          scolaire: true,
+
         },
         {
           nom: 'Académia',
@@ -113,6 +130,7 @@ export default {
           annee: 2,
           langage: 'PHP',
           image: logoAC,
+          scolaire: true,
         },
         {
           nom: 'API Pokémon',
@@ -124,6 +142,7 @@ export default {
           annee: 2,
           langage: 'Node.JS',
           image: logoAPIP,
+          scolaire: true,
         },
         {
           nom: 'Front Pokémon TCG',
@@ -135,6 +154,7 @@ export default {
           annee: 2,
           langage: 'Vue.JS',
           image: logoFP,
+          scolaire: true,
         },
         {
           nom: 'JEI App',
@@ -146,6 +166,7 @@ export default {
           annee: 2,
           langage: 'Flutter',
           image: logoJEI,
+          scolaire: true,
         },
         {
           nom: 'Tic Tac Toe',
@@ -157,6 +178,7 @@ export default {
           annee: 2,
           langage: 'C++',
           image: logoTTT,
+          scolaire: true,
         },
         {
           nom: 'ERP',
@@ -168,6 +190,7 @@ export default {
           annee: 2,
           langage: 'Flutter',
           image: logoERP,
+          scolaire: true,
         },
         {
           nom: 'Magasin',
@@ -179,6 +202,7 @@ export default {
           annee: 1,
           langage: 'Python',
           image: logoNM,
+          scolaire: true,
         },
       ],
       search: '',
@@ -190,6 +214,7 @@ export default {
         { label: 'Année', value: 'annee' },
         { label: 'Membres', value: 'membres' },
         { label: 'Langage', value: 'langage' },
+        { label: 'Non Scolaire', value: 'nonScolaire' },
       ],
       selectedFilter: { label: 'Nom', value: 'nom' },
     }
@@ -227,8 +252,12 @@ export default {
           }
           result.sort((a, b) => a.langage.localeCompare(b.langage))
           break
-      }
 
+        case 'nonScolaire':
+          result = result.filter((p) => p.scolaire === false)
+          result.sort((a, b) => a.nom.localeCompare(b.nom))
+          break
+      }
       return result
     },
 
