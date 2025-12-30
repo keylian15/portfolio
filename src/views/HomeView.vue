@@ -67,7 +67,7 @@ function goToProjects() {
 /* --- Section Hero --- */
 .hero {
   height: 100vh;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   color: var(--color-text);
   display: flex;
   flex-direction: column;

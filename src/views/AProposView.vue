@@ -1,15 +1,15 @@
 <template>
     <div class="about-view">
         <!-- Compétences Techniques -->
-        <section class="section skills">
+        <section class="section">
             <h2>Compétences Techniques</h2>
 
             <div class="skills-category">
                 <!-- Back-end (colonne 1) -->
                 <div class="skills-subcategory">
                     <h4>Back-end</h4>
-                    <p>Je maîtrise la création et la gestion de serveurs, d'API et de bases de données, avec un focus
-                        sur PHP, Node.js et PostgreSQL.</p>
+                    <p>Je maîtrise la création et la gestion de serveurs, d'API et de bases de données,
+                        nottament avec du PHP, Node.js et PostgreSQL.</p>
                     <ul class="tech-list">
                         <li class="icon" title="PHP">
                             <DePhpOriginal />
@@ -47,8 +47,7 @@
                 <!-- Applications (ligne 2, pleine largeur) -->
                 <div class="skills-subcategory">
                     <h4>Applications</h4>
-                    <p>Développement d'applications et scripts variés avec Java, Python, F#, C et C++ pour des besoins
-                        spécifiques.</p>
+                    <p>Développement d'applications et scripts variés avec Java, Python, F#, C et C++.</p>
                     <ul class="tech-list">
                         <li class="icon" title="Java">
                             <DeJavaOriginalWordmark />
@@ -79,9 +78,7 @@
                 <div class="skills-subcategory">
                     <h4>Méthodes de travail</h4>
                     <p>Expérience avec les systèmes de versioning et la collaboration en équipe, ainsi que
-                        l'automatisation
-                        avec
-                        CI/CD.</p>
+                        l'automatisation avec CI/CD.</p>
                     <ul class="tech-list">
                         <li class="icon" title="Git">
                             <DeGitOriginal />
@@ -101,7 +98,9 @@
                 <!-- Frameworks (colonne 2) -->
                 <div class="skills-subcategory">
                     <h4>Frameworks</h4>
-                    <p>Utilisation de frameworks et bibliothèques pour accélérer le développement front et back-end.</p>
+                    <p>Utilisation de frameworks et bibliothèques pour accélérer le développement front et back-end.
+                        Symfony, JavaFX, Vue.js et Express.js.
+                    </p>
                     <ul class="tech-list">
                         <li class="icon" title="Symfony">
                             <DeSymfonyOriginal />
@@ -122,7 +121,7 @@
                 <div class="skills-subcategory">
                     <h4>Environnement de développement</h4>
                     <p>Outils professionnels pour coder efficacement, tester et déployer des projets dans différents
-                        environnements.</p>
+                        environnements. Visual Studio Code, IntelliJ IDEA, Docker et GitKraken.</p>
                     <ul class="tech-list">
                         <li class="icon" title="VS Code">
                             <DeVscodeOriginal />
@@ -132,6 +131,9 @@
                         </li>
                         <li class="icon" title="Docker">
                             <DeDockerPlainWordmark />
+                        </li>
+                        <li class="icon" title="GitKraken">
+                            <CoBrandGitkraken />
                         </li>
                     </ul>
                 </div>
@@ -162,19 +164,110 @@ import {
     DeVscodeOriginal,
     DeIntellijOriginal,
     DeGitlabOriginal,
-    AnOutlinedDeploymentUnit
+    AnOutlinedDeploymentUnit,
+    CoBrandGitkraken
 } from '@kalimahapps/vue-icons'
 </script>
 
 <style scoped>
-.about-view {
-    margin: 0 auto;
-    padding: 4rem 5%;
+/* Sont présent dans le style global de app.vue : 
+  .projets-view
+  .section
+  .tech-list li
+*/
 
-    font-family: var(--font-family-main);
+/* ======== */
+/* A Propos */
+/* ======== */
+
+/* --- Grille pour les catégories de compétences --- */
+.skills-category {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.skills-subcategory:last-child {
+    grid-column: 1 / -1;
+}
+
+/* Pour la section outils : 2 colonnes puis 1 pleine largeur */
+.skills-category {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.skills-subcategory:last-child {
+    grid-column: 1 / -1;
+}
+
+/* Style des sous-catégories */
+.skills-subcategory {
+    background: var(--color-background-card);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.skills-subcategory:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 15px rgba(92, 251, 228, 0.3);
+}
+
+.skills-subcategory h4 {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skills-subcategory p {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+
+/* --- Compétences (Tech List) --- */
+.tech-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-list li {
+    background: var(--color-primary);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
     color: var(--color-text);
-    line-height: 1.6;
-    background-color: var(--color-background-main);
-    min-height: 100vh;
+    min-height: 100px;
+}
+
+.tech-list li:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-hover);
+    color: var(--color-accent);
+    transform: translateY(-5px) scale(1.02);
+}
+
+.tech-list .icon {
+    font-size: 3rem;
+    color: var(--color-accent);
 }
 </style>

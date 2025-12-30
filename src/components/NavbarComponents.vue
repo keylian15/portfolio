@@ -218,44 +218,4 @@ export default {
 .theme-toggle .icon {
     display: block;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-container {
-        padding: 1rem 3%;
-    }
-
-    .nav-links-left {
-        gap: 1.5rem;
-    }
-
-    .nav-link {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
-    }
-
-    .nav-logo .logo-text {
-        font-size: 1.4rem;
-    }
-
-    .theme-toggle {
-        width: 45px;
-        height: 45px;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-links-left {
-        gap: 1rem;
-    }
-
-    .nav-link {
-        font-size: 0.9rem;
-        padding: 0.3rem 0.6rem;
-    }
-
-    .nav-logo .logo-text {
-        font-size: 1.2rem;
-    }
-}
 </style>

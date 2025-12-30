@@ -323,15 +323,13 @@ export default {
 </script>
 
 <style scoped>
+/* Sont présent dans le style global de app.vue : 
+  .projets-view
+*/
+
 /* =========================== */
 /* Page et section des projets */
 /* =========================== */
-
-/* --- Vue Projets (Page /projets) --- */
-.projets-view {
-  margin: 0 auto;
-  padding: 4rem 5%;
-}
 
 /* --- Header de la page projets --- */
 .projets-header {
@@ -424,62 +422,5 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-}
-
-/* --- Media Queries --- */
-@media (max-width: 1024px) {
-  .projets-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .projets-view {
-    padding: 3rem 4%;
-  }
-
-  .projets-header {
-    gap: 2rem;
-  }
-
-  .search-bar {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .buttons-wrapper {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .projets-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 600px) {
-  .projets-view {
-    padding: 2rem 3%;
-  }
-
-  .projets-header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1.5rem;
-  }
-
-  .search-bar {
-    width: 100%;
-  }
-
-  .projets-grid {
-    gap: 20px;
-  }
-
-  .filter-btn {
-    flex: 1 1 calc(50% - 0.375rem);
-    min-width: 120px;
-  }
 }
 </style>
