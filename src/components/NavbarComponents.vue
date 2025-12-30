@@ -15,6 +15,11 @@
                     </router-link>
                 </li>
                 <li>
+                    <router-link to="/about" class="nav-link" exact-active-class="active">
+                        À propos
+                    </router-link>
+                </li>
+                <li>
                     <router-link to="/projets" class="nav-link" active-class="active">
                         Projets
                     </router-link>

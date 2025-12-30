@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProjetsView from '@/views/ProjetsView.vue'
+import AProposView from '@/views/AProposView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,6 +13,10 @@ const router = createRouter({
     {
       path: '/projets',
       component: ProjetsView,
+    },
+    {
+      path: '/about',
+      component: AProposView,
     },
     {
       path: '/:pathMatch(.*)*', // 404 ->

@@ -36,22 +36,6 @@
         </p>
       </section>
 
-      <!-- Compétences -->
-      <section class="section skills">
-        <h2>Technologies Maîtrisées</h2>
-        <ul class="tech-list">
-          <li class="icon"><DeJavaOriginalWordmark /></li>
-          <li class="icon"><DePhpOriginal /></li>
-          <li class="icon"><DeJavascriptOriginal /></li>
-          <li class="icon"><DePythonOriginalWordmark /></li>
-          <li class="icon"><DeNodejsPlainWordmark /></li>
-          <li class="icon"><DeDockerPlainWordmark /></li>
-          <li class="icon"><DeVuejsOriginalWordmark /></li>
-          <li class="icon"><DeAzuresqldatabaseOriginal /></li>
-          <li class="icon"><AkGithubFill /></li>
-        </ul>
-      </section>
-
       <button @click="goToProjects" class="btn-projects">Voir tous mes projets</button>
     </main>
   </div>
@@ -59,20 +43,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import {
-  DeJavaOriginalWordmark,
-  DePhpOriginal,
-  DeJavascriptOriginal,
-  DePythonOriginalWordmark,
-  DeNodejsPlainWordmark,
-  DeDockerPlainWordmark,
-  DeVuejsOriginalWordmark,
-  DeAzuresqldatabaseOriginal,
-  AkGithubFill,
-} from '@kalimahapps/vue-icons'
-
 import '../style/App.css'
-
 const contentSection = ref(null)
 const scrollToSection = () => {
   contentSection.value.scrollIntoView({ behavior: 'smooth' })
