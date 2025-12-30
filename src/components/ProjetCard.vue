@@ -41,17 +41,15 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ProjetCard',
-  props: {
-    projet: {
-      type: Object,
-      required: true,
-    },
-  },
-}
+<script setup>
+defineProps({
+  projet: {
+    type: Object,
+    required: true
+  }
+})
 </script>
+
 
 <style scoped>
 /* Sont présent dans le style global de app.vue : 

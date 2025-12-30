@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import NavbarComponents from './components/NavbarComponents.vue';
+import FooterComponents from './components/FooterComponents.vue';
 </script>
 
 <template>
   <NavbarComponents />
   <div class="navbar-spacer"></div>
   <router-view />
+  <FooterComponents />
 </template>
 
 <style scoped>
