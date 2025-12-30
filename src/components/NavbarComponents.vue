@@ -63,7 +63,6 @@
 </template>
 
 <script>
-import '@/style/Navbar.css'
 
 // Les imports pour les boutons 
 import { AkGithubFill, AkLinkedinBoxFill } from '@kalimahapps/vue-icons';
@@ -122,3 +121,101 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-border);
+    z-index: 1000;
+    box-shadow: 0 4px 12px var(--shadow-hover);
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo .logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links-left {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+    background-color: var(--color-secondary);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background-color: var(--color-secondary);
+}
+
+.nav-link-right {
+    display: flex;
+    list-style: none;
+    gap: 1.7rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.theme-toggle {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.theme-toggle:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-accent);
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 0 0 12px var(--color-accent);
+}
+
+.theme-toggle .icon {
+    display: block;
+}
+</style>

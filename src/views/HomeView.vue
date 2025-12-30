@@ -11,7 +11,7 @@
     <!-- Contenu principal -->
     <main class="content" ref="contentSection">
       <!-- Présentation -->
-      <section class="section about">
+      <section class="section">
         <h2>À Propos de Moi</h2>
         <p>
           Je suis <strong>Turbé Keylian</strong>, j'ai 20 ans et je suis en troisième année de
@@ -43,7 +43,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import '../style/App.css'
 const contentSection = ref(null)
 const scrollToSection = () => {
   contentSection.value.scrollIntoView({ behavior: 'smooth' })
@@ -56,3 +55,43 @@ function goToProjects() {
   router.push('/projets')
 }
 </script>
+
+<style scoped>
+/* Sont présent dans le style global de app.vue : 
+  .home
+  .cta
+  .section
+  .btn-projects
+*/
+
+/* --- Section Hero --- */
+.hero {
+  height: 100vh;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 5%;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  margin-bottom: 3rem;
+}
+
+/* --- Sections Générales --- */
+.content {
+  padding: 6rem 10%;
+  background-color: var(--color-background-main);
+}
+</style>

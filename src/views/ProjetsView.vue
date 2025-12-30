@@ -58,8 +58,6 @@
 </template>
 
 <script>
-import '@/style/Projets.css'
-
 import ProjetCard from '@/components/ProjetCard.vue'
 import FilterSelect from '@/components/FilterSelect.vue'
 
@@ -323,3 +321,106 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+/* Sont présent dans le style global de app.vue : 
+  .projets-view
+*/
+
+/* =========================== */
+/* Page et section des projets */
+/* =========================== */
+
+/* --- Header de la page projets --- */
+.projets-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+/* --- Barre de recherche --- */
+.search-bar {
+  position: relative;
+  flex: 1 1 300px;
+  max-width: 500px;
+  background: none;
+  border: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-light);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  background-color: var(--color-background-card);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-light);
+}
+
+.search-input:hover,
+.filter-btn:hover {
+  background-color: var(--color-background-card);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-hover);
+}
+
+/* --- Conteneur pour grouper le FilterSelect et les boutons --- */
+.filters-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* --- Boutons de filtre --- */
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.filter-btn.active {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* --- Grille des Projets --- */
+.projets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+</style>
