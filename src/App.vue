@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import NavbarComponents from './components/NavbarComponents.vue';
-
 </script>
 
 <template>
@@ -9,14 +8,16 @@ import NavbarComponents from './components/NavbarComponents.vue';
   <router-view />
 </template>
 
-<style>
+<style scoped>
 .navbar-spacer {
   height: 80px;
 }
+</style>
 
-/* ========================================= */
-/* GENERAL.CSS - Styles de base globaux     */
-/* ========================================= */
+<style>
+/* ========================== */
+/* Styles de base globaux     */
+/* ========================== */
 
 /* --- Variables CSS --- */
 :root {
@@ -67,31 +68,6 @@ body {
   letter-spacing: 2px;
 }
 
-/* --- Section Hero (Accueil) --- */
-.hero {
-  height: 100vh;
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 5%;
-}
-
-.hero h1 {
-  font-size: 4rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  color: var(--color-text-light);
-  margin-bottom: 3rem;
-}
-
 /* --- Boutons CTA --- */
 .cta,
 .btn-projects {
@@ -105,10 +81,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.btn-projects {
-  padding: 0.8rem 2rem;
-}
-
 /* Hover général pour les éléments interactifs */
 .cta:hover,
 .btn-projects:hover,
@@ -120,12 +92,6 @@ body {
   transform: translateY(-5px) scale(1.02);
   box-shadow: var(--shadow-hover);
   border-color: var(--color-accent);
-}
-
-/* --- Sections Générales --- */
-.content {
-  padding: 6rem 10%;
-  background-color: var(--color-background-main);
 }
 
 .section {
