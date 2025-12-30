@@ -323,9 +323,9 @@ export default {
 </script>
 
 <style scoped>
-/* ========================================= */
-/* PROJET.CSS - Page et section des projets */
-/* ========================================= */
+/* =========================== */
+/* Page et section des projets */
+/* =========================== */
 
 /* --- Vue Projets (Page /projets) --- */
 .projets-view {
@@ -360,7 +360,7 @@ export default {
   color: var(--color-text-light);
 }
 
-.search-bar .search-input {
+.search-input {
   width: 100%;
   padding: 0.75rem 0.75rem 0.75rem 2.5rem;
   border-radius: 8px;
@@ -380,7 +380,8 @@ export default {
   color: var(--color-text-light);
 }
 
-.search-input:hover {
+.search-input:hover,
+.filter-btn:hover {
   background-color: var(--color-background-card);
   border-color: var(--color-accent);
   box-shadow: var(--shadow-hover);
@@ -412,11 +413,6 @@ export default {
   transition: all 0.3s ease;
 }
 
-.filter-btn:hover {
-  background-color: var(--color-background-card);
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-hover);
-}
 
 .filter-btn.active {
   background-color: var(--color-accent);
@@ -428,66 +424,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-}
-
-/* --- Carte Projet --- */
-.projet-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.projet-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-/* --- Détails du projet (grille 2x2) --- */
-.projet-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem 1rem;
-  margin: 1rem 0;
-}
-
-.detail-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.detail-label {
-  font-weight: 600;
-  color: var(--color-text-light);
-  font-size: 0.85rem;
-}
-
-.detail-value {
-  color: var(--color-text);
-  font-size: 0.95rem;
-  margin-top: 0.25rem;
-}
-
-/* --- Bouton GitHub --- */
-.github-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: var(--color-accent);
-  color: var(--color-primary);
-  padding: 12px 20px;
-  border-radius: 8px;
-  border: 2px solid var(--color-border);
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin-top: auto;
-}
-
-.github-link:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
 }
 
 /* --- Media Queries --- */
@@ -539,10 +475,6 @@ export default {
 
   .projets-grid {
     gap: 20px;
-  }
-
-  .projet-details {
-    grid-template-columns: 1fr;
   }
 
   .filter-btn {

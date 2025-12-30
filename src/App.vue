@@ -49,6 +49,12 @@ body {
   padding: 0;
 }
 
+.centered {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+
 .home,
 .projets-view {
   font-family: var(--font-family-main);
@@ -70,7 +76,8 @@ body {
 
 /* --- Boutons CTA --- */
 .cta,
-.btn-projects {
+.btn-projects,
+.github-link {
   background-color: var(--color-accent);
   color: var(--color-primary);
   padding: 0.8rem 2.5rem;
@@ -83,15 +90,14 @@ body {
 
 /* Hover général pour les éléments interactifs */
 .cta:hover,
-.btn-projects:hover,
-.github-link:hover,
 .tech-list li:hover,
-.projet-card:hover {
+.projet-card:hover,
+.github-link:hover {
   background-color: var(--color-secondary);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-hover);
   color: var(--color-accent);
   transform: translateY(-5px) scale(1.02);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--color-accent);
 }
 
 .section {
