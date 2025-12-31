@@ -4,11 +4,12 @@
         <section class="section">
             <h2>À Propos de Moi</h2>
             <p>
-                Je suis <span class="colored">Turbé Keylian</span>, j'ai 20 ans et je suis en troisième année de
-                <span class="colored">BUT Informatique</span> parcours développement Web & Application. Interessé par le
-                développement, mon parcours m'a permis de réaliser divers projets techniques allant du développement
-                d'API en <span class="colored">Node.js</span> à la création d'applications mobiles avec
-                <span class="colored">Flutter</span>, en passant par la gestion de bases de données.
+                Je suis <span class="colored">Turbé Keylian</span>, j'ai <span class="colored">{{ displayedAge }}
+                    ans</span> et je suis en troisième année de <span class="colored">BUT Informatique</span> parcours
+                développement Web & Application. Interessé par le développement, mon parcours m'a permis de réaliser
+                divers projets techniques allant du développement d'API en <span class="colored">Node.js</span> à la
+                création d'applications mobiles avec <span class="colored">Flutter</span>, en passant par la gestion de
+                bases de données.
             </p>
             <p>
                 Mon approche est de toujours apprendre de nouvelles choses, d'optimiser mes compétences et
@@ -184,6 +185,9 @@
 </template>
 
 <script setup>
+
+import { ref, onMounted } from 'vue'
+
 import {
     DeJavaOriginalWordmark,
     DePhpOriginal,
@@ -208,6 +212,39 @@ import {
     AnOutlinedDeploymentUnit,
     CoBrandGitkraken
 } from '@kalimahapps/vue-icons'
+
+// Date de naissance
+const birthDate = new Date('2005-10-15')
+
+// Calcul de l'âge réel
+function calculateAge() {
+    const now = new Date()
+    let years = now.getFullYear() - birthDate.getFullYear()
+    const monthDiff = now.getMonth() - birthDate.getMonth()
+    const dayDiff = now.getDate() - birthDate.getDate()
+    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) years--
+    return years
+}
+
+const ageReal = calculateAge()
+const displayedAge = ref(0)
+
+// On anime le compteur
+onMounted(() => {
+    const duration = 1500 // durée de l'animation en ms
+    const steps = 30 // nombre d'étapes
+    const increment = ageReal / steps
+    let currentStep = 0
+
+    const interval = setInterval(() => {
+        currentStep++
+        displayedAge.value = Math.round(currentStep * increment)
+        if (currentStep >= steps) {
+            displayedAge.value = ageReal
+            clearInterval(interval)
+        }
+    }, duration / steps)
+})
 </script>
 
 <style scoped>
