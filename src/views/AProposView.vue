@@ -142,7 +142,7 @@
                     </p>
                     <ul class="tech-list">
                         <li class="icon" title="Symfony">
-                            <DeSymfonyOriginal />
+                            <FaBandsSymfony />
                         </li>
                         <li class="icon" title="JavaFX">
                             <DeJavaOriginalWordmark />
@@ -154,7 +154,7 @@
                             <DeVuejsOriginalWordmark />
                         </li>
                         <li class="icon" title="Express.js">
-                            <DeExpressOriginal />
+                            <SiExpress />
                         </li>
                     </ul>
                 </div>
@@ -204,8 +204,8 @@ import {
     VsFileTypeFsharp2,
     DeCOriginal,
     DeCplusplusOriginal,
-    DeSymfonyOriginal,
-    DeExpressOriginal,
+    FaBandsSymfony,
+    SiExpress,
     DeVscodeOriginal,
     DeIntellijOriginal,
     DeGitlabOriginal,
