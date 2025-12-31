@@ -87,10 +87,18 @@ body {
   scrollbar-color: var(--color-accent) var(--color-background-main);
 }
 
-/* Scroll fluide */
-html {
-  scroll-behavior: smooth;
+/* Couleur de sélection du texte */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
 }
+
+/* Firefox */
+::-moz-selection {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
 
 
 .projets-view,
