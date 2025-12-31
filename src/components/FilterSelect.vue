@@ -58,9 +58,9 @@ const selected = computed({
 </template>
 
 <style scoped>
-/* ========================================= */
-/* SELECT.CSS - Composant Select personnalisé */
-/* ========================================= */
+/* ============================= */
+/* Composant Select personnalisé */
+/* ============================= */
 
 /* --- Select HTML standard --- */
 select {
@@ -126,10 +126,8 @@ select:focus {
   z-index: 10;
   margin-top: 0.5rem;
   width: 100%;
-  max-height: 200px;
-  overflow: auto;
   border-radius: 8px;
-  padding: 0.25rem 0;
+  padding: 0;
   background-color: var(--color-background-card);
   border: 2px solid var(--color-accent);
   box-shadow: 0 4px 12px var(--color-primary);

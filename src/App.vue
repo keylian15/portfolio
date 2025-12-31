@@ -60,6 +60,39 @@ body {
   color: var(--color-accent);
 }
 
+/* Scroll global */
+
+/* Chrome / Edge / Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  border-radius: 10px;
+  border: 2px solid var(--color-background-main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-background-main);
+}
+
+/* Scroll fluide */
+html {
+  scroll-behavior: smooth;
+}
+
+
 .projets-view,
 .about-view {
   font-family: var(--font-family-main);
