@@ -6,6 +6,7 @@
   </header>
 
   <!-- Contenu principal -->
+  <ParcoursComponent />
   <div class="content">
 
     <section class="section skills">
@@ -51,8 +52,9 @@ const router = useRouter()
 function goToProjects() {
   router.push('/projets')
 }
-import ProjetCard from '@/components/ProjetCard.vue'
 
+import ProjetCard from '@/components/ProjetCard.vue'
+import ParcoursComponent from '@/components/ParcoursComponent.vue'
 import logoBF from '@/assets/logo_BF.png'
 
 const projet = {
@@ -103,7 +105,7 @@ const projet = {
 /* --- Sections Générales --- */
 .content {
   padding: 6rem 10%;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   border-bottom: var(--color-accent) 1px solid;
   border-top: var(--color-accent) 1px solid;
 }
