@@ -11,21 +11,25 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: { title: 'Accueil' },
     },
     {
       path: '/projets',
       name: 'projets',
       component: ProjetsView,
+      meta: { title: 'Projets' },
     },
     {
       path: '/about',
       name: 'about',
       component: AProposView,
+      meta: { title: 'A propos' },
     },
     {
       path: '/contact',
       name: 'contact',
       component: ContactView,
+      meta: { title: 'Contact' },
     },
     {
       path: '/:pathMatch(.*)*', // 404 ->
@@ -40,6 +44,10 @@ const router = createRouter({
     // sinon scroll en haut
     return { top: 0 }
   },
+})
+
+router.afterEach((to) => {
+  document.title = to.meta.title || 'Portfolio - Keylian'
 })
 
 export default router
