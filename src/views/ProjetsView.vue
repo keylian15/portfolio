@@ -84,7 +84,7 @@ const projets = ref([
   {
     nom: 'Blue Frontline',
     description:
-      "Dans un monde moderne bouleversé par la chute d'une météorite, l'environnement s'est transformé en un archipel d'îles quantiques. Deux grandes puissances s'affrontent pour contrôler cette zone et y mener des recherches. Votre objectif: détruire la base adverse. Combattez vous contre un joueur, une IA ou même en temps que spéctateur ? C'est à vous de décider ! ",
+      "Ce projet est un jeu Pygame intégrant de l'IA décisionnelle.",
     github: 'https://github.com/keylian15/Blue_Frontline',
     nombreMembres: 6,
     duree: '3 mois',
@@ -119,7 +119,7 @@ const projets = ref([
   {
     nom: 'Académia',
     description:
-      "Académia est une application web conçue pour gérer efficacement les informations académiques, incluant les étudiants, les cours, les enseignants et les inscriptions. L'application offre une interface intuitive pour la consultation, la modification et le suivi des données, facilitant ainsi l'administration académique et le suivi pédagogique",
+      "Académia est une application web.",
     github: 'https://github.com/keylian15/Academia',
     nombreMembres: 1,
     duree: '3 mois',
@@ -131,7 +131,7 @@ const projets = ref([
   {
     nom: 'API Pokémon',
     description:
-      "Notre projet est de créer une Application fullstack permettant de gérer des cartes pokémons. Dans ce module nous allons nous concentrer sur la partie backend de l'application.",
+      "C'est le back d'une application fullstack permettant de gérer des cartes pokémons.",
     github: 'https://github.com/keylian15/pokemon-api',
     nombreMembres: 1,
     duree: '1 mois',
@@ -155,7 +155,7 @@ const projets = ref([
   {
     nom: 'JEI App',
     description:
-      "Ce projet est une application mobile inspirée de Minecraft, permettant d'explorer les objets du jeu, leurs recettes de craft et de sauvegarder ses favoris localement.",
+      "Ce projet est une application mobile inspirée de Minecraft.",
     github: 'https://github.com/keylian15/flutterproject',
     nombreMembres: 3,
     duree: '1 mois',
@@ -191,7 +191,7 @@ const projets = ref([
   {
     nom: 'Magasin',
     description:
-      "Le nonovMarket est un logiciel permetant de gérer le rayonnage de produit dans un hypermarché, ainsi que d'offrir au client une possibilité de gain de temps via un algorithme permettant de recuperer de facon optiomal les produits.",
+      "Le nonovMarket est un logiciel permetant de gérer le rayonnage de produit dans un hypermarché.",
     github: 'https://gitlab.com/nonov1012/nonovmarket',
     nombreMembres: 4,
     duree: '1 mois',

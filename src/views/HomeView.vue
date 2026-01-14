@@ -60,7 +60,7 @@ import logoBF from '@/assets/logo_BF.png'
 const projet = {
   nom: 'Blue Frontline',
   description:
-    "Dans un monde moderne bouleversé par la chute d'une météorite, l'environnement s'est transformé en un archipel d'îles quantiques. Deux grandes puissances s'affrontent pour contrôler cette zone et y mener des recherches. Votre objectif: détruire la base adverse. Combattez vous contre un joueur, une IA ou même en temps que spéctateur ? C'est à vous de décider ! ",
+    "Ce projet est un jeu Pygame intégrant de l'IA décisionnelle.",
   github: 'https://github.com/keylian15/Blue_Frontline',
   nombreMembres: 6,
   duree: '3 mois',
