@@ -3,12 +3,12 @@
   <header class="hero">
     <h1>Turbé Keylian</h1>
     <p class="subtitle">Développeur Web & Logiciel</p>
+    <p class="subtitle">Site en cours de développement</p>
   </header>
 
   <!-- Contenu principal -->
   <ParcoursComponent />
   <div class="content">
-
     <section class="section skills">
       <div class="skill-card">
         <div class="skill-text">
@@ -31,7 +31,6 @@
         </div>
       </div>
     </section>
-
   </div>
   <div class="content latest-project">
     <h2 class="section-title">Dernier projet publié</h2>
@@ -40,9 +39,10 @@
       <ProjetCard :key="projet.id" :projet="projet" />
     </div>
 
-    <button @click="goToProjects" class="btn-projects centered">Voir le reste de mes projets</button>
+    <button @click="goToProjects" class="btn-projects centered">
+      Voir le reste de mes projets
+    </button>
   </div>
-
 </template>
 
 <script setup>
@@ -59,8 +59,7 @@ import logoBF from '@/assets/logo_BF.png'
 
 const projet = {
   nom: 'Blue Frontline',
-  description:
-    "Ce projet est un jeu Pygame intégrant de l'IA décisionnelle.",
+  description: "Ce projet est un jeu Pygame intégrant de l'IA décisionnelle.",
   github: 'https://github.com/keylian15/Blue_Frontline',
   nombreMembres: 6,
   duree: '3 mois',
