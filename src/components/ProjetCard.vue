@@ -20,7 +20,7 @@
           <span class="detail-label">Année BUT: </span>
           <span class="detail-value">{{ projet.annee }}</span>
         </div>
-        <div class="detail-item">
+        <div class="detail-item detail-item-full">
           <span class="detail-label">Langage: </span>
           <span v-for="(langage, index) in projet.langages" :key="langage">
             {{ langage }}<span v-if="index < projet.langages.length - 1">, </span>
@@ -128,6 +128,10 @@ defineProps({
   color: var(--color-text-light);
 }
 
+.detail-item-full {
+  grid-column: 1 / -1;
+}
+
 .detail-label {
   font-weight: 600;
   color: var(--color-text);
@@ -137,5 +141,163 @@ defineProps({
   color: var(--color-text);
   font-size: 0.95rem;
   margin-top: 0.25rem;
+}
+
+/* ========================== */
+/* RESPONSIVE STYLES          */
+/* ========================== */
+
+/* Tablettes */
+@media screen and (max-width: 1024px) {
+  .projet-image {
+    height: 220px;
+  }
+
+  .projet-content {
+    padding: 20px;
+  }
+
+  .projet-nom {
+    font-size: 1.6rem;
+  }
+
+  .projet-description {
+    font-size: 0.95rem;
+  }
+
+  .detail-item {
+    font-size: 0.9rem;
+  }
+}
+
+/* Petites tablettes et grands mobiles */
+@media screen and (max-width: 768px) {
+  .projet-card {
+    border-radius: 12px;
+  }
+
+  .projet-image {
+    height: 200px;
+  }
+
+  .projet-content {
+    padding: 18px;
+  }
+
+  .projet-nom {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .projet-description {
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+  }
+
+  .projet-details {
+    gap: 0.6rem 0.8rem;
+    margin: 0.8rem 0;
+  }
+
+  .detail-item {
+    font-size: 0.85rem;
+  }
+
+  .github-link {
+    padding: 0.7rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobiles */
+@media screen and (max-width: 480px) {
+  .projet-card {
+    border-radius: 10px;
+  }
+
+  .projet-image {
+    height: 180px;
+  }
+
+  .projet-content {
+    padding: 16px;
+  }
+
+  .projet-nom {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .projet-description {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  /* Passage en une colonne sur mobile */
+  .projet-details {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin: 0.8rem 0;
+  }
+
+  .detail-item-full {
+    grid-column: 1;
+  }
+
+  .detail-item {
+    font-size: 0.8rem;
+  }
+
+  .detail-label {
+    font-size: 0.8rem;
+  }
+
+  .detail-value {
+    font-size: 0.8rem;
+  }
+
+  .github-link {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .github-link svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Très petits mobiles */
+@media screen and (max-width: 360px) {
+  .projet-image {
+    height: 160px;
+  }
+
+  .projet-content {
+    padding: 14px;
+  }
+
+  .projet-nom {
+    font-size: 1.2rem;
+  }
+
+  .projet-description {
+    font-size: 0.8rem;
+  }
+
+  .detail-item {
+    font-size: 0.75rem;
+  }
+
+  .github-link {
+    padding: 0.55rem 1.3rem;
+    font-size: 0.8rem;
+  }
+
+  .github-link svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 </style>

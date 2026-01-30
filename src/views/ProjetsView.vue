@@ -500,4 +500,140 @@ onBeforeUnmount(() => {
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
+
+.no-projects {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+}
+
+/* ========================== */
+/* RESPONSIVE STYLES          */
+/* ========================== */
+
+/* Tablettes et petits écrans */
+@media screen and (max-width: 1200px) {
+  .projets-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .projets-header {
+    gap: 2rem;
+  }
+
+  .search-bar {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .projets-view {
+    padding: 3rem 4%;
+  }
+
+  .projets-header {
+    gap: 1.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablettes */
+@media screen and (max-width: 768px) {
+  .projets-view {
+    padding: 2.5rem 4%;
+  }
+
+  .projets-header {
+    align-items: stretch;
+  }
+
+  .search-bar {
+    max-width: 50%;
+    flex: 1 1 100%;
+  }
+
+  .filters-group {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .projets-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobiles */
+@media screen and (max-width: 480px) {
+  .projets-view {
+    padding: 2rem 3%;
+  }
+
+  .projets-header {
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .search-input {
+    padding: 0.65rem 0.65rem 0.65rem 2.3rem;
+    font-size: 0.95rem;
+  }
+
+  .search-icon {
+    width: 18px;
+    height: 18px;
+    left: 8px;
+  }
+
+  .filters-group {
+    gap: 0.6rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .projets-grid {
+    gap: 20px;
+  }
+
+  .no-projects {
+    font-size: 1rem;
+    padding: 2rem;
+  }
+}
+
+/* Très petits mobiles */
+@media screen and (max-width: 360px) {
+  .projets-view {
+    padding: 1.5rem 3%;
+  }
+
+  .search-input {
+    padding: 0.6rem 0.6rem 0.6rem 2.2rem;
+    font-size: 0.9rem;
+  }
+
+  .filter-btn {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .projets-grid {
+    gap: 15px;
+  }
+}
 </style>
