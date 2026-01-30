@@ -28,7 +28,8 @@ const activeIndex = ref(1)
 const progressWidth = computed(() => {
     const maxWidth = 90 // 100% - 10% (5% de chaque côté)
     return (activeIndex.value / (parcours.value.length - 1)) * maxWidth
-})</script>
+})
+</script>
 
 <template>
     <div class="parcours-view">
@@ -193,7 +194,6 @@ const progressWidth = computed(() => {
     border-radius: 16px;
     padding: 2.5rem;
     margin: 2rem auto 0;
-    width: 70vh;
     transition: all 0.4s ease;
 }
 

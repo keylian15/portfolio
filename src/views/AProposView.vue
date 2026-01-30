@@ -348,4 +348,191 @@ onMounted(() => {
     font-size: 3rem;
     color: var(--color-accent);
 }
+
+/* ========================== */
+/* RESPONSIVE STYLES          */
+/* ========================== */
+
+/* Tablettes */
+@media screen and (max-width: 1024px) {
+    .about-view {
+        padding: 3rem 4%;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .skills-subcategory {
+        padding: 1.5rem;
+    }
+
+    .skills-subcategory h4 {
+        font-size: 1.3rem;
+    }
+
+    .tech-list {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 0.8rem;
+    }
+
+    .tech-list li {
+        padding: 1.2rem;
+        min-height: 90px;
+    }
+
+    .tech-list .icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* Petites tablettes et grands mobiles */
+@media screen and (max-width: 768px) {
+    .about-view {
+        padding: 2.5rem 4%;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    /* Passage en 1 colonne pour les catégories */
+    .skills-category {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .skills-subcategory:last-child {
+        grid-column: 1;
+    }
+
+    .skills-subcategory {
+        padding: 1.5rem;
+    }
+
+    .skills-subcategory h4 {
+        font-size: 1.2rem;
+    }
+
+    .skills-subcategory p {
+        font-size: 0.9rem;
+    }
+
+    .tech-list {
+        grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+        gap: 0.7rem;
+    }
+
+    .tech-list li {
+        padding: 1rem;
+        min-height: 80px;
+    }
+
+    .tech-list .icon {
+        font-size: 2.2rem;
+    }
+
+    .section {
+        margin-bottom: 4rem;
+    }
+}
+
+/* Mobiles */
+@media screen and (max-width: 480px) {
+    .about-view {
+        padding: 2rem 3%;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .section p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .skills-category {
+        gap: 1.2rem;
+    }
+
+    .skills-subcategory {
+        padding: 1.2rem;
+        border-radius: 10px;
+    }
+
+    .skills-subcategory h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .skills-subcategory p {
+        font-size: 0.85rem;
+        margin-bottom: 1.2rem;
+    }
+
+    /* Grille plus compacte avec moins d'éléments par ligne */
+    .tech-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.6rem;
+    }
+
+    .tech-list li {
+        padding: 0.8rem;
+        min-height: 70px;
+        border-radius: 10px;
+    }
+
+    .tech-list .icon {
+        font-size: 1.8rem;
+    }
+
+    .section {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Très petits mobiles */
+@media screen and (max-width: 360px) {
+    .about-view {
+        padding: 1.5rem 3%;
+    }
+
+    .section h2 {
+        font-size: 1.3rem;
+    }
+
+    .section p {
+        font-size: 0.9rem;
+    }
+
+    .skills-subcategory {
+        padding: 1rem;
+    }
+
+    .skills-subcategory h4 {
+        font-size: 1rem;
+    }
+
+    .skills-subcategory p {
+        font-size: 0.8rem;
+    }
+
+    .tech-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .tech-list li {
+        padding: 0.7rem;
+        min-height: 65px;
+    }
+
+    .tech-list .icon {
+        font-size: 1.6rem;
+    }
+}
 </style>
