@@ -164,4 +164,235 @@ const projet = {
   width: 33%;
   justify-content: center;
 }
+
+/* ========================== */
+/* RESPONSIVE STYLES          */
+/* ========================== */
+
+/* Grands écrans et tablettes larges */
+@media screen and (max-width: 1200px) {
+  .hero h1 {
+    font-size: 5rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .content {
+    padding: 5rem 8%;
+  }
+
+  .skills {
+    gap: 1.5rem;
+  }
+
+  .project-wrapper {
+    width: 50%;
+  }
+}
+
+/* Tablettes */
+@media screen and (max-width: 1024px) {
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .content {
+    padding: 4rem 6%;
+  }
+
+  .skills {
+    margin-top: 4rem;
+  }
+
+  .skill-card {
+    padding: 1.8rem;
+    min-width: 220px;
+  }
+
+  .skill-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .skill-card p {
+    font-size: 0.95rem;
+  }
+
+  .latest-project {
+    padding: 3.5rem 6%;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .project-wrapper {
+    width: 60%;
+  }
+}
+
+/* Petites tablettes et grands mobiles */
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    padding: 3rem 4%;
+  }
+
+  .skills {
+    flex-direction: column;
+    margin-top: 3rem;
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    padding: 1.5rem;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .skill-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .skill-card p {
+    font-size: 0.9rem;
+  }
+
+  .latest-project {
+    padding: 3rem 4%;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-wrapper {
+    width: 100%;
+  }
+
+  .btn-projects {
+    padding: 0.8rem 2.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobiles */
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    padding: 0 1rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .content {
+    padding: 2.5rem 3%;
+  }
+
+  .skills {
+    margin-top: 2rem;
+    gap: 1.2rem;
+  }
+
+  .skill-card {
+    padding: 1.2rem;
+  }
+
+  .skill-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .skill-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .latest-project {
+    padding: 2.5rem 3%;
+    gap: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .btn-projects {
+    padding: 0.7rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Très petits mobiles */
+@media screen and (max-width: 360px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    padding: 2rem 3%;
+  }
+
+  .skills {
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+
+  .skill-card {
+    padding: 1rem;
+  }
+
+  .skill-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .skill-card p {
+    font-size: 0.8rem;
+  }
+
+  .latest-project {
+    padding: 2rem 3%;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-projects {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
 </style>
