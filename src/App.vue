@@ -12,7 +12,7 @@ import FooterComponents from './components/FooterComponents.vue';
 
 <style scoped>
 .navbar-spacer {
-  height: 80px;
+  height: 5vh;
 }
 </style>
 
