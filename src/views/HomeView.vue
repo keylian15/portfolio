@@ -80,6 +80,7 @@ const projet = {
 /* --- Section Hero --- */
 .hero {
   height: 100vh;
+  width: 100%;
   background-color: var(--color-primary);
   color: var(--color-text);
   display: flex;
@@ -87,26 +88,32 @@ const projet = {
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .hero h1 {
   font-size: 6rem;
   margin-bottom: 0.5rem;
   color: var(--color-text);
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 .subtitle {
   font-size: 1.5rem;
   color: var(--color-text-light);
   margin-bottom: 3rem;
+  max-width: 90%;
 }
 
 /* --- Sections Générales --- */
 .content {
+  width: 100%;
   padding: 6rem 10%;
   background-color: var(--color-primary);
   border-bottom: var(--color-accent) 1px solid;
   border-top: var(--color-accent) 1px solid;
+  box-sizing: border-box;
 }
 
 .skills {
@@ -115,6 +122,7 @@ const projet = {
   gap: 2rem;
   margin-top: 6rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .skill-card {
@@ -125,6 +133,7 @@ const projet = {
   flex: 1;
   min-width: 250px;
   gap: 1rem;
+  box-sizing: border-box;
 }
 
 .skill-card .icon {
@@ -161,7 +170,8 @@ const projet = {
 }
 
 .project-wrapper {
-  width: 33%;
+  width: 100%;
+  max-width: 500px;
   justify-content: center;
 }
 
@@ -188,7 +198,7 @@ const projet = {
   }
 
   .project-wrapper {
-    width: 50%;
+    max-width: 600px;
   }
 }
 
@@ -233,7 +243,7 @@ const projet = {
   }
 
   .project-wrapper {
-    width: 60%;
+    max-width: 700px;
   }
 }
 
@@ -286,7 +296,7 @@ const projet = {
   }
 
   .project-wrapper {
-    width: 100%;
+    max-width: 100%;
   }
 
   .btn-projects {
