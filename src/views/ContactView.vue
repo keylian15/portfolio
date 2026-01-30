@@ -165,7 +165,7 @@ function resetForm() {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 4rem;
     background: var(--color-background-main);
 }
 
@@ -333,17 +333,224 @@ textarea {
     }
 }
 
-@media (max-width: 640px) {
-    .contact-card {
+/* ========================== */
+/* RESPONSIVE STYLES          */
+/* ========================== */
+
+/* Tablettes */
+@media screen and (max-width: 768px) {
+    .contact-container {
         padding: 2rem;
     }
 
-    .form-row {
-        grid-template-columns: 1fr;
+    .contact-card {
+        padding: 2.5rem;
+        border-radius: 14px;
     }
 
+    .contact-title {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .contact-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .contact-form {
+        gap: 1.3rem;
+    }
+
+    input,
+    textarea {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.9rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 0.95rem;
+        padding: 0.75rem 2rem;
+    }
+}
+
+/* Mobiles */
+@media screen and (max-width: 640px) {
+    .contact-container {
+        padding: 1rem;
+        align-items: flex-start;
+        padding-top: 2.5rem;
+    }
+
+    .contact-card {
+        padding: 2rem;
+        border-radius: 12px;
+    }
+
+    .contact-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .contact-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Passage en 1 colonne pour nom/prénom */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+    }
+
+    .contact-form {
+        gap: 1.2rem;
+    }
+
+    input,
+    textarea {
+        font-size: 0.9rem;
+        padding: 0.65rem 0.85rem;
+    }
+
+    label {
+        font-size: 0.85rem;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    /* Boutons en colonne */
     .form-actions {
         flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 0.5rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.7rem 1.5rem;
+    }
+
+    .error-message {
+        font-size: 0.8rem;
+    }
+
+    .success-message {
+        padding: 0.9rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Petits mobiles */
+@media screen and (max-width: 480px) {
+    .contact-container {
+        padding: 0.8rem;
+        padding-top: 1.5rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+
+    .contact-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .contact-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .form-row {
+        gap: 1rem;
+    }
+
+    .contact-form {
+        gap: 1rem;
+    }
+
+    input,
+    textarea {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem;
+        border-radius: 6px;
+    }
+
+    label {
+        font-size: 0.8rem;
+    }
+
+    textarea {
+        min-height: 90px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 0.85rem;
+        padding: 0.65rem 1.3rem;
+        border-radius: 40px;
+    }
+
+    .error-message {
+        font-size: 0.75rem;
+    }
+
+    .success-message {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+        border-radius: 6px;
+    }
+}
+
+/* Très petits mobiles */
+@media screen and (max-width: 360px) {
+    .contact-container {
+        padding: 0.5rem;
+        padding-top: 1rem;
+    }
+
+    .contact-card {
+        padding: 1.2rem;
+    }
+
+    .contact-title {
+        font-size: 1.3rem;
+    }
+
+    .contact-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    input,
+    textarea {
+        font-size: 0.8rem;
+        padding: 0.55rem 0.75rem;
+    }
+
+    label {
+        font-size: 0.75rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .error-message {
+        font-size: 0.7rem;
     }
 }
 </style>
