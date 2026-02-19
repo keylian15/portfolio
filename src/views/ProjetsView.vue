@@ -204,7 +204,7 @@ const projets = ref([
     nom: 'Portfolio',
     description:
       "Le but de ce projet était de créer un portfolio pour présenter mes compétences et mes projets",
-    github: 'https://gitlab.com/keylian15/portfolio',
+    github: 'https://github.com/keylian15/portfolio',
     nombreMembres: 1,
     duree: '1 ans',
     annee: 3,
@@ -216,7 +216,7 @@ const projets = ref([
     nom: 'Basket Predictor',
     description:
       "Le but de cette application web est de prédire le score d'un match de basket. (Le Front du projet)",
-    github: 'https://gitlab.com/keylian15/WEB_Basket',
+    github: 'https://github.com/keylian15/WEB_Basket',
     nombreMembres: 5,
     duree: '1 mois',
     annee: 2,
@@ -228,7 +228,7 @@ const projets = ref([
     nom: 'Basket Predictor (API)',
     description:
       "Le but de cette application web est de prédire le score d'un match de basket. (Le Back du projet)",
-    github: 'https://gitlab.com/keylian15/API_Basket',
+    github: 'https://github.com/keylian15/API_Basket',
     nombreMembres: 1,
     duree: '1 mois',
     annee: 2,
