@@ -65,6 +65,7 @@ const progressWidth = computed(() => {
                 <p>{{ parcours[activeIndex].description }}</p>
             </div>
         </div>
+
     </div>
 </template>
 

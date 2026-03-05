@@ -3,11 +3,15 @@
   <header class="hero">
     <h1>Turbé Keylian</h1>
     <p class="subtitle">Développeur Web & Logiciel</p>
+    <button @click="goToAbout" class="cta">
+      Me découvrir davantage
+    </button>
   </header>
 
   <!-- Contenu principal -->
   <ParcoursComponent />
   <div class="content">
+    <h2 class="section-title">Mes rayons d'actions</h2>
     <section class="section skills">
       <div class="skill-card">
         <div class="skill-text">
@@ -26,7 +30,7 @@
       <div class="skill-card">
         <div class="skill-text">
           <h2>Application</h2>
-          <p>Développement d'un jeu 2D avec logique gameplay et mécaniques interactives.</p>
+          <p>Développement de jeux 2D & 3D avec logique gameplay et mécaniques interactives.</p>
         </div>
       </div>
     </section>
@@ -42,6 +46,17 @@
       Voir le reste de mes projets
     </button>
   </div>
+
+  <!-- Section Vidéo -->
+  <div class="content video-section">
+    <h2 class="section-title">Mon BUT en 180 secondes</h2>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/0gOE_9xyAgY" title="Vidéo de présentation" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -50,6 +65,10 @@ const router = useRouter()
 
 function goToProjects() {
   router.push('/projets')
+}
+
+function goToAbout() {
+  router.push('/about')
 }
 
 import ProjetCard from '@/components/ProjetCard.vue'
@@ -115,11 +134,19 @@ const projet = {
   box-sizing: border-box;
 }
 
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--color-accent);
+  text-align: center;
+}
+
 .skills {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: 6rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -160,18 +187,31 @@ const projet = {
   background-color: var(--color-background-main);
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  color: var(--color-accent);
-  text-align: center;
-}
-
 .project-wrapper {
   width: 100%;
   max-width: 500px;
   justify-content: center;
+}
+
+.video-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-accent);
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* ========================== */
@@ -217,7 +257,7 @@ const projet = {
   }
 
   .skills {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
 
   .skill-card {
@@ -267,7 +307,7 @@ const projet = {
 
   .skills {
     flex-direction: column;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     gap: 1.5rem;
   }
 
@@ -326,7 +366,7 @@ const projet = {
   }
 
   .skills {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     gap: 1.2rem;
   }
 
@@ -375,7 +415,7 @@ const projet = {
   }
 
   .skills {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     gap: 1rem;
   }
 
