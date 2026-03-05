@@ -309,8 +309,8 @@ const projetsFiltres = computed(() => {
     case 'annee':
       if (filtreValeur.value !== null) {
         result = result.filter((p) => p.annee == filtreValeur.value)
+        result.sort((a, b) => a.annee - b.annee)
       }
-      result.sort((a, b) => a.annee - b.annee)
       break
 
     case 'membres':
@@ -338,7 +338,11 @@ const projetsFiltres = computed(() => {
 })
 
 const annee = computed(() => {
-  return Math.min(...projets.value.map((p) => p.annee))
+  const annees = projets.value
+    .map(p => p.annee)
+    .filter(a => a !== undefined && a !== null)
+
+  return Math.min(...annees)
 })
 
 const membres = computed(() => {
@@ -346,7 +350,12 @@ const membres = computed(() => {
 })
 
 const anneesDisponibles = computed(() => {
-  const set = new Set(projets.value.map((p) => p.annee))
+  const set = new Set(
+    projets.value
+      .filter(p => p.annee !== undefined && p.annee !== null)
+      .map(p => p.annee)
+  )
+
   return [...set].sort((a, b) => a - b)
 })
 
