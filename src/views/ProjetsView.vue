@@ -252,7 +252,7 @@ const projets = ref([
     scolaire: true,
   },
   {
-    nom: 'Slient Office VR',
+    nom: 'Silent Office VR',
     description:
       "Création d'un puzzle game en réalité virtuelle.",
     lien: "Drive",
