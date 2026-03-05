@@ -76,6 +76,8 @@ import logoERP from '@/assets/logo_ERP.png'
 import logoPF from '@/assets/logo_PF.png'
 import logoWB from '@/assets/logo_WB.png'
 import logoAPIB from '@/assets/logo_APIB.png'
+import logoSilentOffice from '@/assets/logo_SilentOffice.png'
+import logoSurvivalGame from '@/assets/logo_SurvivalGame.png'
 
 const router = useRouter()
 const route = useRoute()
@@ -85,7 +87,8 @@ const projets = ref([
     nom: 'Blue Frontline',
     description:
       "Ce projet est un jeu Pygame intégrant de l'IA décisionnelle.",
-    github: 'https://github.com/keylian15/Blue_Frontline',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/Blue_Frontline',
     nombreMembres: 6,
     duree: '3 mois',
     annee: 3,
@@ -97,7 +100,8 @@ const projets = ref([
     nom: 'NodeBuster',
     description:
       'Ceci est un projet inspiré du jeu NodeBuster. Il met en œuvre des bonnes pratiques de qualité de code et de tests.',
-    github: 'https://github.com/keylian15/nodeBuster',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/nodeBuster',
     nombreMembres: 1,
     duree: '1 mois',
     annee: 2,
@@ -108,7 +112,8 @@ const projets = ref([
   {
     nom: 'Jeu de la Vie',
     description: 'Ce projet implémente le célèbre Jeu de la Vie de John Conway',
-    github: 'https://github.com/keylian15/Jeu_de_la_vie',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/Jeu_de_la_vie',
     nombreMembres: 1,
     duree: '1 mois',
     annee: 2,
@@ -120,7 +125,8 @@ const projets = ref([
     nom: 'Académia',
     description:
       "Académia est une application web.",
-    github: 'https://github.com/keylian15/Academia',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/Academia',
     nombreMembres: 1,
     duree: '3 mois',
     annee: 2,
@@ -132,7 +138,8 @@ const projets = ref([
     nom: 'API Pokémon',
     description:
       "C'est le back d'une application fullstack permettant de gérer des cartes pokémons.",
-    github: 'https://github.com/keylian15/pokemon-api',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/pokemon-api',
     nombreMembres: 1,
     duree: '1 mois',
     annee: 2,
@@ -144,7 +151,8 @@ const projets = ref([
     nom: 'Front Pokémon TCG',
     description:
       "C'est le front de l'application fullstack permettant de gérer des cartes pokémons.",
-    github: 'https://github.com/keylian15/pokemon-tcg',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/pokemon-tcg',
     nombreMembres: 1,
     duree: '1 mois',
     annee: 2,
@@ -156,11 +164,12 @@ const projets = ref([
     nom: 'JEI App',
     description:
       "Ce projet est une application mobile inspirée de Minecraft.",
-    github: 'https://github.com/keylian15/flutterproject',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/flutterproject',
     nombreMembres: 3,
     duree: '1 mois',
     annee: 2,
-    langages: ['Flutter', 'Dart'],
+    langages: ['Flutter / Dart'],
     image: logoJEI,
     scolaire: true,
   },
@@ -168,11 +177,12 @@ const projets = ref([
     nom: 'Tic Tac Toe',
     description:
       'Ce projet est un jeu de morpion en local jouable sur le même ordinateur avec des spectateurs.',
-    github: 'https://github.com/keylian15/Tic-Tac-Toe-Network',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/Tic-Tac-Toe-Network',
     nombreMembres: 3,
     duree: '1 mois',
     annee: 2,
-    langages: ['C++'],
+    langages: ['C'],
     image: logoTTT,
     scolaire: true,
   },
@@ -180,11 +190,12 @@ const projets = ref([
     nom: 'ERP',
     description:
       "Le but de ce projet était d'intégrer la logique de l'ERP dans une application mobile",
-    github: 'https://github.com/keylian15/Flutter_ERP',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/Flutter_ERP',
     nombreMembres: 1,
     duree: '1 mois',
     annee: 2,
-    langages: ['Flutter', 'Dart'],
+    langages: ['Flutter / Dart'],
     image: logoERP,
     scolaire: true,
   },
@@ -192,7 +203,8 @@ const projets = ref([
     nom: 'Magasin',
     description:
       "Le nonovMarket est un logiciel permetant de gérer le rayonnage de produit dans un hypermarché.",
-    github: 'https://gitlab.com/nonov1012/nonovmarket',
+    lien: 'GitHub',
+    url: 'https://gitlab.com/nonov1012/nonovmarket',
     nombreMembres: 4,
     duree: '1 mois',
     annee: 1,
@@ -204,7 +216,8 @@ const projets = ref([
     nom: 'Portfolio',
     description:
       "Le but de ce projet était de créer un portfolio pour présenter mes compétences et mes projets",
-    github: 'https://github.com/keylian15/portfolio',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/portfolio',
     nombreMembres: 1,
     duree: '1 ans',
     annee: 3,
@@ -216,7 +229,8 @@ const projets = ref([
     nom: 'Basket Predictor',
     description:
       "Le but de cette application web est de prédire le score d'un match de basket. (Le Front du projet)",
-    github: 'https://github.com/keylian15/WEB_Basket',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/WEB_Basket',
     nombreMembres: 5,
     duree: '1 mois',
     annee: 2,
@@ -228,13 +242,39 @@ const projets = ref([
     nom: 'Basket Predictor (API)',
     description:
       "Le but de cette application web est de prédire le score d'un match de basket. (Le Back du projet)",
-    github: 'https://github.com/keylian15/API_Basket',
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/API_Basket',
     nombreMembres: 1,
     duree: '1 mois',
     annee: 2,
     langages: ['Node.JS'],
     image: logoAPIB,
     scolaire: true,
+  },
+  {
+    nom: 'Slient Office VR',
+    description:
+      "Création d'un puzzle game en réalité virtuelle.",
+    lien: "Drive",
+    url: "https://drive.google.com/drive/folders/10piFEKgMaJ6_9sfNiIUJem1UuLHMi6_c?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
+    nombreMembres: 6,
+    duree: '1 semaine',
+    annee: 3,
+    langages: ['UE 5'],
+    image: logoSilentOffice,
+    scolaire: true,
+  },
+  {
+    nom: 'Survival Game',
+    description:
+      "Création d'un jeu de survie multijoueur.",
+    lien: "Tiktok",
+    url: "",
+    nombreMembres: 1,
+    duree: 'En cours',
+    langages: ['UE 5'],
+    image: logoSurvivalGame,
+    scolaire: false,
   },
 ])
 
@@ -422,7 +462,7 @@ onBeforeUnmount(() => {
 .search-bar {
   position: relative;
   flex: 1 1 300px;
-  max-width: 500px;
+  max-width: 242px;
   background: none;
   border: none;
 }

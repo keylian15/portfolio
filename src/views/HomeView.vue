@@ -3,7 +3,6 @@
   <header class="hero">
     <h1>Turbé Keylian</h1>
     <p class="subtitle">Développeur Web & Logiciel</p>
-    <p class="subtitle">Site en cours de développement</p>
   </header>
 
   <!-- Contenu principal -->
@@ -33,7 +32,7 @@
     </section>
   </div>
   <div class="content latest-project">
-    <h2 class="section-title">Dernier projet publié</h2>
+    <h2 class="section-title">Projet le plus important</h2>
 
     <div class="project-wrapper">
       <ProjetCard :key="projet.id" :projet="projet" />
