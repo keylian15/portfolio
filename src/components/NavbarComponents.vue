@@ -36,11 +36,6 @@
                         Me contacter
                     </router-link>
                 </li>
-                <li>
-                    <router-link to="/competences" class="nav-link" active-class="active" @click="closeMenu">
-                        Mes compétences
-                    </router-link>
-                </li>
             </ul>
 
             <!-- Right side icons (desktop) -->
@@ -99,11 +94,6 @@
                     <li>
                         <router-link to="/contact" class="nav-link" active-class="active" @click="closeMenu">
                             Me contacter
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/competences" class="nav-link" active-class="active" @click="closeMenu">
-                            Mes compétences
                         </router-link>
                     </li>
                 </ul>
