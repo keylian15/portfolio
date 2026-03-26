@@ -3,7 +3,6 @@ import HomeView from '../views/HomeView.vue'
 import ProjetsView from '@/views/ProjetsView.vue'
 import AProposView from '@/views/AProposView.vue'
 import ContactView from '@/views/ContactView.vue'
-import CompetenceView from '@/views/CompetenceView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,12 +30,6 @@ const router = createRouter({
       name: 'contact',
       component: ContactView,
       meta: { title: 'Contact' },
-    },
-    {
-      path: '/competences',
-      name: 'competences',
-      component: CompetenceView,
-      meta: { title: 'Mes compétences' },
     },
     {
       path: '/:pathMatch(.*)*', // 404 ->
