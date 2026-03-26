@@ -46,17 +46,6 @@
       Voir le reste de mes projets
     </button>
   </div>
-
-  <!-- Section Vidéo -->
-  <div class="content video-section">
-    <h2 class="section-title">Mon BUT en 180 secondes</h2>
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/0gOE_9xyAgY" title="Vidéo de présentation" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
 </template>
 
 <script setup>
