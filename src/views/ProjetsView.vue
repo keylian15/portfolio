@@ -17,7 +17,7 @@
         <div v-if="filtreActif === 'annee'" class="buttons-wrapper">
           <button v-for="a in anneesDisponibles" :key="a" :class="['filter-btn', { active: filtreValeur === a }]"
             @click="filtreValeur = a">
-            BUT {{ a }}
+            {{ a }}
           </button>
         </div>
 
@@ -78,9 +78,32 @@ import logoWB from '@/assets/logo_WB.png'
 import logoAPIB from '@/assets/logo_APIB.png'
 import logoSilentOffice from '@/assets/logo_SilentOffice.png'
 import logoSurvivalGame from '@/assets/logo_SurvivalGame.png'
+import logoExplorateurImage from '@/assets/logo_ExplorateurImage.png'
 
 const router = useRouter()
 const route = useRoute()
+
+// Ordre des cycles pour le tri (du plus ancien au plus récent).
+// Ajouter un nouveau cycle ici suffit pour qu'il soit correctement trié.
+const CYCLE_ORDER = ['BUT', 'ING']
+
+function parseAnnee(annee) {
+  if (!annee) return null
+  const match = String(annee).trim().match(/^([A-Za-z]+)\s*(\d+)$/)
+  if (!match) return null
+  return { cycle: match[1].toUpperCase(), numero: parseInt(match[2], 10) }
+}
+
+function compareAnnees(a, b) {
+  const pa = parseAnnee(a)
+  const pb = parseAnnee(b)
+  if (!pa || !pb) return 0
+
+  const cycleDiff = CYCLE_ORDER.indexOf(pa.cycle) - CYCLE_ORDER.indexOf(pb.cycle)
+  if (cycleDiff !== 0) return cycleDiff
+
+  return pa.numero - pb.numero
+}
 
 const projets = ref([
   {
@@ -91,7 +114,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/Blue_Frontline',
     nombreMembres: 6,
     duree: '3 mois',
-    annee: 3,
+    annee: 'BUT 3',
     langages: ['Python'],
     image: logoBF,
     scolaire: true,
@@ -104,7 +127,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/nodeBuster',
     nombreMembres: 1,
     duree: '1 mois',
-    annee: 2,
+    annee: 'BUT 2',
     langages: ['Java'],
     image: logoNB,
     scolaire: true,
@@ -116,7 +139,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/Jeu_de_la_vie',
     nombreMembres: 1,
     duree: '1 mois',
-    annee: 2,
+    annee: 'BUT 2',
     langages: ['C++'],
     image: logoJDLV,
     scolaire: true,
@@ -129,7 +152,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/Academia',
     nombreMembres: 1,
     duree: '3 mois',
-    annee: 2,
+    annee: 'BUT 2',
     langages: ['PHP', 'SQL'],
     image: logoAC,
     scolaire: true,
@@ -142,7 +165,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/pokemon-api',
     nombreMembres: 1,
     duree: '1 mois',
-    annee: 2,
+    annee: 'BUT 2',
     langages: ['Node.JS', 'SQL'],
     image: logoAPIP,
     scolaire: true,
@@ -155,7 +178,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/pokemon-tcg',
     nombreMembres: 1,
     duree: '1 mois',
-    annee: 2,
+    annee: 'BUT 2',
     langages: ['Vue.JS'],
     image: logoFP,
     scolaire: true,
@@ -168,7 +191,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/flutterproject',
     nombreMembres: 3,
     duree: '1 mois',
-    annee: 2,
+    annee: 'BUT 2',
     langages: ['Flutter / Dart'],
     image: logoJEI,
     scolaire: true,
@@ -181,7 +204,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/Tic-Tac-Toe-Network',
     nombreMembres: 3,
     duree: '1 mois',
-    annee: 2,
+    annee: 'BUT 2',
     langages: ['C'],
     image: logoTTT,
     scolaire: true,
@@ -194,7 +217,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/Flutter_ERP',
     nombreMembres: 1,
     duree: '1 mois',
-    annee: 2,
+    annee: 'BUT 2',
     langages: ['Flutter / Dart'],
     image: logoERP,
     scolaire: true,
@@ -207,7 +230,7 @@ const projets = ref([
     url: 'https://gitlab.com/nonov1012/nonovmarket',
     nombreMembres: 4,
     duree: '1 mois',
-    annee: 1,
+    annee: 'BUT 1',
     langages: ['Python'],
     image: logoNM,
     scolaire: true,
@@ -220,7 +243,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/portfolio',
     nombreMembres: 1,
     duree: '1 ans',
-    annee: 3,
+    annee: 'BUT 3',
     langages: ['Vue.JS'],
     image: logoPF,
     scolaire: true,
@@ -233,7 +256,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/WEB_Basket',
     nombreMembres: 5,
     duree: '1 mois',
-    annee: 2,
+    annee: 'BUT 2',
     langages: ['PHP', 'SQL'],
     image: logoWB,
     scolaire: true,
@@ -246,7 +269,7 @@ const projets = ref([
     url: 'https://github.com/keylian15/API_Basket',
     nombreMembres: 1,
     duree: '1 mois',
-    annee: 2,
+    annee: 'BUT 2',
     langages: ['Node.JS'],
     image: logoAPIB,
     scolaire: true,
@@ -256,10 +279,10 @@ const projets = ref([
     description:
       "Création d'un puzzle game en réalité virtuelle.",
     lien: "Drive",
-    url: "https://drive.google.com/drive/folders/10piFEKgMaJ6_9sfNiIUJem1UuLHMi6_c?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
+    url: "",
     nombreMembres: 6,
     duree: '1 semaine',
-    annee: 3,
+    annee: 'BUT 3',
     langages: ['UE 5'],
     image: logoSilentOffice,
     scolaire: true,
@@ -271,11 +294,24 @@ const projets = ref([
     lien: "Tiktok",
     url: "",
     nombreMembres: 1,
-    duree: 'En cours',
+    duree: '4 mois',
     langages: ['UE 5'],
     image: logoSurvivalGame,
     scolaire: false,
   },
+  {
+    nom: 'Explorateur d\'Images Sémantiques',
+    description:
+      "Application permettant d'explorer et de visualiser des images de facon sémantique.",
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/ExplorateurImage.git',
+    nombreMembres: 1,
+    duree: '2 mois',
+    annee: 'BUT 3',
+    langages: ['Python'],
+    image: logoExplorateurImage,
+    scolaire: true,
+  }
 ])
 
 const search = ref('')
@@ -309,7 +345,7 @@ const projetsFiltres = computed(() => {
     case 'annee':
       if (filtreValeur.value !== null) {
         result = result.filter((p) => p.annee == filtreValeur.value)
-        result.sort((a, b) => a.annee - b.annee)
+        result.sort((a, b) => compareAnnees(a.annee, b.annee))
       }
       break
 
@@ -342,7 +378,9 @@ const annee = computed(() => {
     .map(p => p.annee)
     .filter(a => a !== undefined && a !== null)
 
-  return Math.min(...annees)
+  if (annees.length === 0) return null
+
+  return annees.reduce((min, current) => (compareAnnees(current, min) < 0 ? current : min))
 })
 
 const membres = computed(() => {
@@ -356,7 +394,7 @@ const anneesDisponibles = computed(() => {
       .map(p => p.annee)
   )
 
-  return [...set].sort((a, b) => a - b)
+  return [...set].sort(compareAnnees)
 })
 
 const membresDisponibles = computed(() => {
@@ -449,7 +487,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-/* Sont présent dans le style global de app.vue : 
+/* Sont présent dans le style global de app.vue :
   .projets-view
 */
 

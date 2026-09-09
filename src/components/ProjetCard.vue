@@ -17,7 +17,7 @@
           <span class="detail-value">{{ projet.duree }}</span>
         </div>
         <div class="detail-item" v-if="projet.annee">
-          <span class="detail-label"> Année BUT: </span>
+          <span class="detail-label"> Année: </span>
           <span class="detail-value"> {{ projet.annee }}</span>
         </div>
         <div class="detail-item">
@@ -52,7 +52,7 @@ defineProps({
 
 
 <style scoped>
-/* Sont présent dans le style global de app.vue : 
+/* Sont présent dans le style global de app.vue :
   .github-link
   .centered
 */

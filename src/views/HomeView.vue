@@ -70,7 +70,7 @@ const projet = {
   github: 'https://github.com/keylian15/Blue_Frontline',
   nombreMembres: 6,
   duree: '3 mois',
-  annee: 3,
+  annee: 'BUT 3',
   langages: ['Python'],
   image: logoBF,
   scolaire: true,
@@ -78,7 +78,7 @@ const projet = {
 </script>
 
 <style scoped>
-/* Sont présent dans le style global de app.vue : 
+/* Sont présent dans le style global de app.vue :
   .cta
   .section
   .btn-projects
