@@ -308,6 +308,7 @@ const projets = ref([
     nombreMembres: 1,
     duree: '2 mois',
     annee: 'BUT 3',
+
     langages: ['Python'],
     image: logoExplorateurImage,
     scolaire: true,

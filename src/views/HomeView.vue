@@ -62,19 +62,22 @@ function goToAbout() {
 
 import ProjetCard from '@/components/ProjetCard.vue'
 import ParcoursComponent from '@/components/ParcoursComponent.vue'
-import logoBF from '@/assets/logo_BF.png'
+import logoExplorateurImage from '@/assets/logo_ExplorateurImage.png'
 
 const projet = {
-  nom: 'Blue Frontline',
-  description: "Ce projet est un jeu Pygame intégrant de l'IA décisionnelle.",
-  github: 'https://github.com/keylian15/Blue_Frontline',
-  nombreMembres: 6,
-  duree: '3 mois',
-  annee: 'BUT 3',
-  langages: ['Python'],
-  image: logoBF,
-  scolaire: true,
-}
+    nom: 'Explorateur d\'Images Sémantiques',
+    description:
+      "Application permettant d'explorer et de visualiser des images de facon sémantique.",
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/ExplorateurImage.git',
+    nombreMembres: 1,
+    duree: '2 mois',
+    annee: 'BUT 3',
+
+    langages: ['Python'],
+    image: logoExplorateurImage,
+    scolaire: true,
+  }
 </script>
 
 <style scoped>
