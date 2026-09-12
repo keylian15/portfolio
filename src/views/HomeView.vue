@@ -36,10 +36,10 @@
     </section>
   </div>
   <div class="content latest-project">
-    <h2 class="section-title">Projet le plus important</h2>
+    <h2 class="section-title">Top 3 projets</h2>
 
-    <div class="project-wrapper">
-      <ProjetCard :key="projet.id" :projet="projet" />
+    <div class="projets-grid">
+      <ProjetCard v-for="projet in projets" :key="projet.id" :projet="projet" />
     </div>
 
     <button @click="goToProjects" class="btn-projects centered">
@@ -50,6 +50,7 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
+import { ref } from 'vue'
 const router = useRouter()
 
 function goToProjects() {
@@ -63,8 +64,11 @@ function goToAbout() {
 import ProjetCard from '@/components/ProjetCard.vue'
 import ParcoursComponent from '@/components/ParcoursComponent.vue'
 import logoExplorateurImage from '@/assets/logo_ExplorateurImage.png'
+import logoSurvivalGame from '@/assets/logo_SurvivalGame.png'
+import logoBF from '@/assets/logo_BF.png'
 
-const projet = {
+const projets = ref([
+  {
     nom: 'Explorateur d\'Images Sémantiques',
     description:
       "Application permettant d'explorer et de visualiser des images de facon sémantique.",
@@ -77,7 +81,33 @@ const projet = {
     langages: ['Python'],
     image: logoExplorateurImage,
     scolaire: true,
-  }
+  },
+  {
+    nom: 'Survival Game',
+    description:
+      "Création d'un jeu de survie multijoueur.",
+    lien: "GitHub",
+    url: "https://github.com/keylian15/SurvivalGame",
+    nombreMembres: 1,
+    duree: '4 mois',
+    langages: ['UE 5'],
+    image: logoSurvivalGame,
+    scolaire: false,
+  },
+  {
+    nom: 'Blue Frontline',
+    description:
+      "Ce projet est un jeu Pygame intégrant de l'IA décisionnelle.",
+    lien: 'GitHub',
+    url: 'https://github.com/keylian15/Blue_Frontline',
+    nombreMembres: 6,
+    duree: '3 mois',
+    annee: 'BUT 3',
+    langages: ['Python'],
+    image: logoBF,
+    scolaire: true,
+  },
+])
 </script>
 
 <style scoped>
@@ -179,11 +209,12 @@ const projet = {
   background-color: var(--color-background-main);
 }
 
-.project-wrapper {
-  width: 100%;
-  max-width: 500px;
-  justify-content: center;
+.projets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
+
 
 .video-section {
   display: flex;

@@ -291,8 +291,8 @@ const projets = ref([
     nom: 'Survival Game',
     description:
       "Création d'un jeu de survie multijoueur.",
-    lien: "Tiktok",
-    url: "",
+    lien: "GitHub",
+    url: "https://github.com/keylian15/SurvivalGame",
     nombreMembres: 1,
     duree: '4 mois',
     langages: ['UE 5'],

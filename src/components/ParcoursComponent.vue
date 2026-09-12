@@ -11,18 +11,18 @@ const parcours = ref([
     {
         date: '2023-2026',
         title: 'BUT Informatique',
-        description: "Actuellement étudiant en troisième année de BUT Informatique à l'IUT de Calais, où je développe mes connaissances en programmation, mais surtout en développement web et applicatif.",
-        icon: '🏫'
+        description: "Diplômé d'un BUT Informatique à l'IUT de Calais, où j'ai développé mes connaissances en programmation, mais surtout en développement web et applicatif.",
+        icon: '🎓'
     },
     {
-        date: '2025',
-        title: 'Stage de deuxième année de BUT',
-        description: "J'ai effectué un stage de 8 semaines dans l'entreprise JMD-Ingénieurie. J'ai participé à la création de plusieurs applications web comme Boucovoiturage, La Boucoop et même Ges-War.",
-        icon: '💼'
+        date: '2026 - 2029',
+        title: 'Ingénieur en Informatique',
+        description: "Actuellement en 1ere année d'ingénieur en informatique à l'EILCO de Calais, où j'appronfondis mes connaissances en programmation.",
+        icon: '🏫'
     }
 ])
 
-const activeIndex = ref(1)
+const activeIndex = ref(2)
 
 // Calcul du pourcentage de progression
 const progressWidth = computed(() => {
