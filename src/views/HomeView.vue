@@ -259,8 +259,9 @@ const projets = ref([
     gap: 1.5rem;
   }
 
-  .project-wrapper {
-    max-width: 600px;
+  .projets-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 }
 
@@ -304,8 +305,9 @@ const projets = ref([
     font-size: 2.2rem;
   }
 
-  .project-wrapper {
-    max-width: 700px;
+  .projets-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 }
 
@@ -355,10 +357,6 @@ const projets = ref([
   .section-title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-  }
-
-  .project-wrapper {
-    max-width: 100%;
   }
 
   .btn-projects {
@@ -420,6 +418,10 @@ const projets = ref([
     padding: 0.7rem 2rem;
     font-size: 0.9rem;
   }
+
+  .projets-grid {
+    gap: 20px;
+  }
 }
 
 /* Très petits mobiles */
@@ -465,6 +467,10 @@ const projets = ref([
   .btn-projects {
     padding: 0.6rem 1.5rem;
     font-size: 0.85rem;
+  }
+
+  .projets-grid {
+    gap: 15px;
   }
 }
 </style>
