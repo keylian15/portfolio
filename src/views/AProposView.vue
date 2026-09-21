@@ -5,8 +5,10 @@
             <h2>À Propos de Moi</h2>
             <p>
                 Je suis <span class="colored">Turbé Keylian</span>, j'ai <span class="colored">{{ displayedAge }}
-                    ans</span> et je suis en troisième année de <span class="colored">BUT Informatique</span> parcours
-                développement Web & Application. Interessé par le développement, mon parcours m'a permis de réaliser
+                    ans</span> et je suis diplomé d'un <span class="colored">BUT Informatique</span>, parcours
+                développement Web & Application. Je poursuis actuellement mes études en première année d'
+                <span class="colored">école d'ingénieur</span> à l'EILCO.
+                Interessé par le développement, mon parcours m'a permis de réaliser
                 divers projets techniques allant du développement d'API en <span class="colored">Node.js</span> à la
                 création d'applications mobiles avec <span class="colored">Flutter</span>, en passant par la gestion de
                 bases de données.
@@ -248,7 +250,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Sont présent dans le style global de app.vue : 
+/* Sont présent dans le style global de app.vue :
   .projets-view
   .section
   .tech-list li
